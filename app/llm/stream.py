@@ -4,8 +4,7 @@ from app.core.config import settings
 
 async def stream_tokens(prompt: str) -> AsyncGenerator[str, None]:
     """
-    Prompt için Ollama'dan token-by-token stream alınır.
-    """
+    A token-by-token stream is obtained from Ollama for the prompt.    """
     client = OllamaClient()
 
     try:
