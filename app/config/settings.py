@@ -4,10 +4,10 @@ from typing import Optional, Union
 
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
-    PROJECT_NAME: str = "FastAPI Project"
+    PROJECT_NAME: str = "LLM Streaming API (Huggingface model based)"
+    VERSION: str = "1.0.0"
+    DESCRIPTION: str = "An API for streaming responses from LLMs using Huggingface models."
     
-    # Database
-    DATABASE_URL: str
     
     # CORS
     BACKEND_CORS_ORIGINS: list[str] = ["http://localhost:3000"]
@@ -17,14 +17,6 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     ENVIRONMENT: str = "development"
-    
-    # OpenAI
-    OPENAI_API_KEY: str
-    OPENAI_ORGANIZATION: str
-    # AWS
-    AWS_ACCESS_KEY_ID: str = "your_default_access_key_id"
-    AWS_SECRET_ACCESS_KEY: str
-    AWS_REGION: str = "us-east-1"
     
     class Config:
         case_sensitive = True
