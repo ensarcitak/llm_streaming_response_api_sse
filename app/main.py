@@ -12,7 +12,7 @@ app = FastAPI(title="LLM Streaming API (Huggingface model based)", version="1.0"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this to your needs
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
