@@ -11,12 +11,10 @@ logger = Logger(__name__)
 router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse)
-async def create_chat(
-    request: ChatRequest = Depends(ChatRequest.as_form),
-):
+async def create_chat(request: ChatRequest):
     try:
-        provider_id = request.model
-        llm_provider = LLMFactory.get_provider(provider_id)
+        provider = request.model
+        llm_provider = LLMFactory.get_provider(provider)
         
         if request.stream:
             return StreamingResponse(

@@ -12,8 +12,8 @@ from logging import Logger
 logger = Logger(__name__)
 
 class HuggingFaceLLMProvider(BaseLLMProvider):
-    def __init__(self, model_name: str = "mistralai/Mixtral-8x7B-Instruct-v0.1"):
-        logger.logger.info(f"HuggingFaceLLMProvider başlatılıyor, model: {model_name}")
+    def __init__(self, model_name: str = "google/gemma-3-4b-it"):
+        logger.logger.info(f"HuggingFaceLLMProvider is starting, model: {model_name}")
         try:
             self.model = HuggingFaceHub(
                 repo_id=model_name,
